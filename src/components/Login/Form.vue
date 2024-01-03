@@ -11,10 +11,44 @@
     </div>
 
     <div class="button-container">
-      <button type="button">Login</button>
+      <button type="button" @click="submitForm">Login</button>
     </div>
   </form>
 </template>
+
+<script lang="ts">
+export default {
+  methods: {
+    async submitForm() {
+      const username = (document.getElementById("username") as HTMLInputElement).value;
+      const password = (document.getElementById("password") as HTMLInputElement).value;
+
+      try {
+          const response = await fetch("http://localhost:5000/login", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ username, password }),
+          });
+
+          if (response.ok) {
+              // Successful login
+              const cookies = response.headers.get("Set-Cookie");
+              document.cookie = cookies || ""; // Set the received cookie
+              window.location.href = "redirect_page.html"; // Redirect to a success page
+          } else {
+              // Failed login
+              (document.getElementById("error-message") as HTMLParagraphElement).innerText = "Invalid username or password.";
+          }
+      } catch (error) {
+          console.error("Error:", error);
+          (document.getElementById("error-message") as HTMLParagraphElement).innerText = "An error occurred.";
+      }
+    }
+  }
+}
+</script>
 
 <style scoped>
 form {
