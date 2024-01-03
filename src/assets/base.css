@@ -1,24 +1,27 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* color palette for American red, white, and blue theme */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --american-bg-white: #ffffff;
+  --american-text-black: #181818;
+  --american-red-accent-1: #d9534f;
+  --american-red-accent-2: #F9423A;
+  --american-blue-accent-1: #3a589e;
+  --american-blue-accent-2: #203367;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --bg: var(--american-bg-white);
+  --text: var(--american-text-black);
+  --primary-accent-1: var(--american-blue-accent-1);
+  --primary-accent-2: var(--american-blue-accent-2);
+  --secondary-accent-1: var(--american-red-accent-1);
+  --secondary-accent-2: var(--american-red-accent-2);
 
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --divider-light-1: rgba(60, 60, 60, 0.29);
+  --divider-light-2: rgba(60, 60, 60, 0.12);
+  --divider-dark-1: rgba(84, 84, 84, 0.65);
+  --divider-dark-2: rgba(84, 84, 84, 0.48);
+  --text-light-1: var(--vt-c-red); /* Use red for light text */
+  --text-light-2: rgba(60, 60, 60, 0.66);
+  --text-dark-1: var(--vt-c-white);
+  --text-dark-2: rgba(235, 235, 235, 0.64);
 }
 
 /* semantic color variables for this project */
