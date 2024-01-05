@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import Form from './Form.vue'
-    import Title from './Title.vue'
+    import Form from './login/Form.vue'
+    import Title from './login/Title.vue'
 </script>
 
 <template>
