@@ -18,20 +18,14 @@
 
 <script setup lang="ts">
     import { ref } from 'vue';
+    import { login } from '../../services/auth'
 
    const username = ref('');
    const password = ref('');
 
    async function submitForm() {
        try {
-           const response = await fetch("http://localhost:5000/login", {
-               method: "POST",
-               headers: {
-                  "Content-Type": "application/json",
-               },
-               body: JSON.stringify({ username: username.value, password: password.value }),
-           });
-
+           const response = await login(username.value, password.value)
            if (response.ok) {
                const loginResponse = await response.json()
                console.log(loginResponse)
