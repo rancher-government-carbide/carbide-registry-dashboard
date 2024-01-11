@@ -4,12 +4,10 @@
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" v-model="username" required>
         </div>
-
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" v-model="password" required>
         </div>
-
         <div class="button-container">
             <button type="button" @click="submitForm">Login</button>
         </div>
@@ -17,26 +15,21 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue';
-    import { login } from '../../services/auth'
+import { ref } from 'vue';
+import { login } from '../../services/auth'
 
-   const username = ref('');
-   const password = ref('');
+const username = ref('');
+const password = ref('');
 
-   async function submitForm() {
-       try {
-           const response = await login(username.value, password.value)
-           if (response.ok) {
-               const loginResponse = await response.json()
-               console.log(loginResponse)
-           } else {
-               (document.getElementById("error-message") as HTMLParagraphElement).innerText = "Invalid username or password.";
-           }
-       } catch (error) {
-           console.error("Error:", error);
-           (document.getElementById("error-message") as HTMLParagraphElement).innerText = "An error occurred.";
-       }
-   }
+async function submitForm() {
+    try {
+        const loginResult = await login(username.value, password.value)
+        console.log(loginResult)
+    } catch (error) {
+        console.error("error:", error);
+        // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "An error occurred.";
+    }
+}
 </script>
 
 <style scoped>
