@@ -1,4 +1,11 @@
 /// <reference types="vite/client" />
+interface User {
+    Id: number;
+    Username: string;
+    Password: string;
+    CreatedAt: string;
+    UpdatedAt: string;
+}
 
 interface Product {
     Id: number;
