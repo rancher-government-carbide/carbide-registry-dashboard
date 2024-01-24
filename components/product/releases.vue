@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const products = ref<Product[]>([])
+const route = useRoute()
+const releaseName = route.params.slug as string
 
+const releasesForProduct = ref<Release[]>([])
 try {
-    products.value = await getAllProducts()
-    console.log(products.value)
+    releasesForProduct.value = await getAllReleases(releaseName)
+    console.log(releasesForProduct.value)
 } catch (error) {
     console.error("error:", error);
     // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "error:" + error.message;
@@ -13,19 +15,17 @@ try {
 </script>
 
 <template>
- <div class="product-grid">
-   <div v-for="product in products" :key="product.Id" class="product-icon">
+ <div class="release-grid">
+   <div v-for="release in releasesForProduct" :key="release.Id" class="release-icon">
      <i class="fas fa-cube"></i>
-     <Nuxt-link :to="`/product/${product.Name}`">
-       <p>{{ product.Name }}</p>
-     </Nuxt-link>
+       <p>{{ release.Name }}</p>
    </div>
  </div>
 </template>
 
 
 <style scoped>
-.product-grid {
+.release-grid {
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
  grid-auto-rows: auto;
@@ -34,7 +34,7 @@ try {
  width: 50%;
 }
 
-.product-icon {
+.release-icon {
  display: flex;
  flex-direction: column;
  align-items: center;
@@ -46,16 +46,16 @@ try {
  transition: transform 0.3s ease-in-out;
 }
 
-.product-icon:hover {
+.release-icon:hover {
  transform: scale(1.05);
 }
 
-.product-icon i {
+.release-icon i {
  font-size: 50px;
  color: var(--primary-accent-1);
 }
 
-.product-icon p {
+.release-icon p {
  margin-top: 10px;
  font-size: 20px;
  color: var(--text);
