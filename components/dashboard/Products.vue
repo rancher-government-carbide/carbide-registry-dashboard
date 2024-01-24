@@ -9,7 +9,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { getAllProducts } from '../../services/product'
 
 const products = ref<Product[]>([])
 
