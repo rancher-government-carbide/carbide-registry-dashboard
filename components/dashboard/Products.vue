@@ -24,9 +24,11 @@ try {
 <style scoped>
 .product-grid {
  display: grid;
- grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ grid-auto-rows: auto;
  gap: 20px;
  padding: 20px;
+ width: 50%;
 }
 
 .product-icon {
