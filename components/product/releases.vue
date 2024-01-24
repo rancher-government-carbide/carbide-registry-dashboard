@@ -19,6 +19,7 @@ try {
    <div v-for="release in releasesForProduct" :key="release.Id" class="release-icon">
      <i class="fas fa-cube"></i>
        <p>{{ release.Name }}</p>
+       <a :href="release.TarballLink" target="_blank" class="download-button">Download Tarball</a>
    </div>
  </div>
 </template>
@@ -31,7 +32,7 @@ try {
  grid-auto-rows: auto;
  gap: 20px;
  padding: 20px;
- width: 50%;
+ width: 30%;
 }
 
 .release-icon {
