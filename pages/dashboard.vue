@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page-container">
       <Suspense>
           <template #default>
               <dashboardProducts/>
@@ -12,7 +12,7 @@
 </template>
 
 <style>
-.container {
+.page-container {
   display: flex;
   justify-content: center;
   align-items: center;
