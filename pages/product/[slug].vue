@@ -2,7 +2,10 @@
   <div class="page-container">
       <Suspense>
           <template #default>
-              <ProductReleases/>
+              <div>
+                <ProductTitle/>
+                <ProductReleases/>
+              </div>
           </template>
           <template #fallback>
               <span>Loading...</span>
