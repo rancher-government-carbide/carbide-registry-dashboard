@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build-container": "nerdctl build . -t clanktron/carbide-images-dashboard:dev",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "clean": "rm dist; rm -r .output"
   },
   "devDependencies": {
     "nuxt": "^3.9.3",
