@@ -1,0 +1,6 @@
+apiVersion: v2
+name: carbide-images-dashboard
+description: Site for viewing current images available in the carbide software suite
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
