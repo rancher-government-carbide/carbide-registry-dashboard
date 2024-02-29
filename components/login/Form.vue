@@ -22,8 +22,14 @@ const password = ref('');
 
 async function submitForm() {
     try {
-        const loginResult = await login(username.value, password.value)
-        console.log(loginResult)
+        const authorized = await login(username.value, password.value)
+        if (authorized) {
+            console.debug("navigating to dashboard")
+            navigateTo('/dashboard')
+        } else {
+            console.debug("unauthorized")
+            // error popup
+        }
     } catch (error) {
         console.error("error:", error);
         // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "An error occurred.";

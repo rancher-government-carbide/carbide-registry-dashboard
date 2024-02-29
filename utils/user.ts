@@ -1,6 +1,6 @@
-export async function login(username: string, password: string): Promise<User> {
+export async function login(username: string, password: string): Promise<Boolean> {
     try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -9,13 +9,28 @@ export async function login(username: string, password: string): Promise<User> {
             body: JSON.stringify({ username: username, password: password }),
         });
         if (response.ok) {
-            const loginResult = await response.json()
-            return loginResult
+            return true
         } else {
-            throw new Error("invalid response from server");
+            return false
         }
     } catch (error) {
-        throw new Error("HTTP request failed");
+        throw error;
+    }
+}
+
+export async function userIsAuthorized(): Promise<Boolean> {
+    try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth`, {
+            method: "GET",
+            credentials: "include",
+        });
+        if (response.ok) {
+            return true
+        } else {
+            return false
+        }
+    } catch (error) {
+        throw error
     }
 }
 
@@ -35,7 +50,7 @@ export async function register(username: string, password: string) {
             throw new Error("invalid response from server");
         }
     } catch (error) {
-        throw new Error("HTTP request failed");
+        throw error
     }
 }
 
@@ -56,6 +71,6 @@ export async function logout() {
             throw new Error("invalid response from server");
         }
     } catch (error) {
-        throw new Error("HTTP request failed");
+        throw error
     }
 }
