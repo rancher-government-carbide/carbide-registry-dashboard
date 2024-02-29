@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div>
       <Suspense>
           <template #default>
               <div>
@@ -13,12 +13,3 @@
       </Suspense>
   </div>
 </template>
-
-<style>
-.page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-</style>
