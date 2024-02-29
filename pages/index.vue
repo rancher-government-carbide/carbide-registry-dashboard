@@ -1,16 +1,15 @@
 <template>
-  <div class="page-container">
-      <loginTitle title="RGS Carbide Images"/>
-      <loginForm/>
-  </div>
+    <div class="absolute-center">
+        <loginTitle title="RGS Carbide Images"/>
+        <loginForm/>
+    </div>
 </template>
 
 <style scoped>
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
