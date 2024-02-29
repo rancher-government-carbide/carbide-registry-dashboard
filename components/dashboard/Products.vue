@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
 const products = ref<Product[]>([])
-
 try {
     products.value = await getAllProducts()
     console.log(products.value)
@@ -13,51 +10,22 @@ try {
 </script>
 
 <template>
- <div class="product-grid">
-   <div v-for="product in products" :key="product.Id" class="product-icon">
-     <i class="fas fa-cube"></i>
-     <Nuxt-link :to="`/product/${product.Name}`">
-       <p>{{ product.Name }}</p>
-     </Nuxt-link>
-   </div>
- </div>
+    <div class="container p-5">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col-m4" v-for="product in products" :key="product.Id">
+                <div class="card">
+                    <img class="card-img-top p-3" style="background-color: #868e96" src="https://k3s.io/img/k3s-logo-dark.svg" >
+                    <div class="card-body">
+                         <Nuxt-link :to="`/product/${product.Name}`">
+                           <h4 class="card-title">{{ product.Name }}</h4>
+                         </Nuxt-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 
 <style scoped>
-.product-grid {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- grid-auto-rows: auto;
- gap: 20px;
- padding: 20px;
- width: 50%;
-}
-
-.product-icon {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- background-color: var(--bg);
- padding: 20px;
- border-radius: 10px;
- box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
- transition: transform 0.3s ease-in-out;
-}
-
-.product-icon:hover {
- transform: scale(1.05);
-}
-
-.product-icon i {
- font-size: 50px;
- color: var(--primary-accent-1);
-}
-
-.product-icon p {
- margin-top: 10px;
- font-size: 20px;
- color: var(--text);
-}
 </style>
