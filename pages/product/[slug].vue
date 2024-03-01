@@ -2,7 +2,7 @@
   <div>
       <Suspense>
           <template #default>
-              <div>
+              <div class="container">
                 <ProductTitle/>
                 <ProductReleases/>
               </div>

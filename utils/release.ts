@@ -11,7 +11,7 @@ export async function getAllReleases(product: string): Promise<Release[]> {
             throw new Error("invalid response from server");
         }
     } catch (error) {
-        throw new Error("HTTP request failed");
+        throw error
     }
 }
 
@@ -28,6 +28,6 @@ export async function getRelease(product: string, release: string): Promise<Rele
             throw new Error("invalid response from server");
         }
     } catch (error) {
-        throw new Error("HTTP request failed");
+        throw error
     }
 }

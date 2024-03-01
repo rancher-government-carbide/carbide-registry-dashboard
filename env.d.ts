@@ -25,7 +25,7 @@ interface Release {
     TarballLink: string;
     CreatedAt: string;
     UpdatedAt: string;
-    // Images: null;
+    Images: Image[];
 }
 
 interface Image {
