@@ -1,16 +1,5 @@
-<script setup lang="ts">
-const products = ref<Product[]>([])
-try {
-    products.value = await getAllProducts()
-    console.log(products.value)
-} catch (error) {
-    console.error("error:", error);
-    // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "error:" + error.message;
-}
-</script>
-
 <template>
-    <div class="container p-5">
+    <div class="container">
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col-m4" v-for="product in products" :key="product.Id">
                 <div class="card">
@@ -26,6 +15,13 @@ try {
     </div>
 </template>
 
-
-<style scoped>
-</style>
+<script setup lang="ts">
+const products = ref<Product[]>([])
+try {
+    products.value = await getAllProducts()
+    console.log(products.value)
+} catch (error) {
+    console.error("error:", error);
+    // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "error:" + error.message;
+}
+</script>
