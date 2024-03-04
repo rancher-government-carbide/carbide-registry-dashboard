@@ -1,4 +1,8 @@
 /// <reference types="vite/client" />
+interface Message {
+    Message: string;
+}
+
 interface User {
     Id: number;
     Username: string;
