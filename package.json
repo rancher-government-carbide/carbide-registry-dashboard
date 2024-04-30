@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "build-container": "nerdctl build . -t clanktron/carbide-images-dashboard:dev",
+    "build-container": "nerdctl build . -t clanktron/carbide-registry-dashboard:dev",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

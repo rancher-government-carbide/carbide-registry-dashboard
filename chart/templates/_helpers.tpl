@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "carbide-images-dashboard.name" -}}
+{{- define "carbide-registry-dashboard.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "carbide-images-dashboard.fullname" -}}
+{{- define "carbide-registry-dashboard.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "carbide-images-dashboard.chart" -}}
+{{- define "carbide-registry-dashboard.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "carbide-images-dashboard.labels" -}}
-helm.sh/chart: {{ include "carbide-images-dashboard.chart" . }}
-{{ include "carbide-images-dashboard.selectorLabels" . }}
+{{- define "carbide-registry-dashboard.labels" -}}
+helm.sh/chart: {{ include "carbide-registry-dashboard.chart" . }}
+{{ include "carbide-registry-dashboard.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "carbide-images-dashboard.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "carbide-images-dashboard.name" . }}
+{{- define "carbide-registry-dashboard.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "carbide-registry-dashboard.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "carbide-images-dashboard.serviceAccountName" -}}
+{{- define "carbide-registry-dashboard.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "carbide-images-dashboard.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "carbide-registry-dashboard.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

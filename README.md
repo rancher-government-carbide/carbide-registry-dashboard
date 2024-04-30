@@ -1,4 +1,4 @@
-# Carbide Images Dashboard
+# Carbide Registry Dashboard
 
 Site for viewing current images available in the carbide software suite.
 

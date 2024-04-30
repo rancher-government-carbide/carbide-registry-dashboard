@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: clanktron/carbide-images-dashboard
+  repository: clanktron/carbide-registry-dashboard
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
