@@ -1,28 +1,21 @@
 <template>
-    <form id="loginForm">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" v-model="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" v-model="password" required>
-        </div>
-        <div class="button-container">
-            <button type="button" @click="submitForm">Login</button>
-        </div>
-    </form>
+    <div class="container">
+        <form id="loginForm">
+            <div class="form-floating mb-3">
+                <input class="form-control" placeholder="Paste your license here..." type="password" id="license" name="license" v-model="license" required>
+            </div>
+            <div class="center-horizontal">
+                <button class="btn btn-primary" type="button" @click="submitForm">Login</button>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const username = ref('');
-const password = ref('');
-
+const license = ref('');
 async function submitForm() {
     try {
-        const authorized = await login(username.value, password.value)
+        const authorized = await login(license.value)
         if (authorized) {
             console.debug("navigating to dashboard")
             navigateTo('/dashboard')

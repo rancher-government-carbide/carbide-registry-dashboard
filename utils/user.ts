@@ -1,4 +1,4 @@
-export async function login(username: string, password: string): Promise<Boolean> {
+export async function login(license: string): Promise<Boolean> {
     try {
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth`, {
             method: "POST",
@@ -6,7 +6,7 @@ export async function login(username: string, password: string): Promise<Boolean
             headers: {
                "Content-Type": "application/json",
             },
-            body: JSON.stringify({ username: username, password: password }),
+            body: JSON.stringify({ license: license }),
         });
         if (response.ok) {
             return true
