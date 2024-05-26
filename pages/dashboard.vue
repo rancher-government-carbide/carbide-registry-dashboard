@@ -1,6 +1,6 @@
 <template>
   <div>
-      <dashboardTitle title="Products"/>
+      <navbar/>
       <Suspense>
           <template #default>
               <dashboardProducts/>
