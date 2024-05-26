@@ -2,11 +2,15 @@
     <div class="accordion" id="accordion">
       <div class="accordion-item" v-for="release in releasesForProduct" :key="release.Id">
         <h2 class="accordion-header">
-            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="accordion-button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+release.Id" aria-expanded="false" :aria-controls="'collapse'+release.Id">
              {{ release.Name }}
             </button>
         </h2>
-        <ProductImages :product="productName" :release="release.Name"></ProductImages>
+        <div :id="'collapse'+release.Id" class="accordion collapse" data-bs-parent="#accordion">
+            <div class="accordion-body">
+                <ProductImages :product="productName" :release="release.Name"></ProductImages>
+            </div>
+        </div>
       </div>
     </div>
 </template>

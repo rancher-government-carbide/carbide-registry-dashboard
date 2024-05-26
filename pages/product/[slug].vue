@@ -1,5 +1,6 @@
 <template>
   <div>
+      <navbar/>
       <Suspense>
           <template #default>
               <div class="container">

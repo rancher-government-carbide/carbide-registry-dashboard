@@ -4,7 +4,7 @@ const releaseName = route.params.slug as string
 </script>
 
 <template>
-<h1 class="p-2">{{ releaseName }}</h1>
+<h1 class="p-2 text-uppercase fw-bold">{{ releaseName }}</h1>
 </template>
 
 <style scoped>
