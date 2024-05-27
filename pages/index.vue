@@ -1,6 +1,6 @@
 <template>
     <div class="absolute-center">
-        <loginTitle title="RGS Carbide Images"/>
+        <loginTitle title="Carbide Registry"/>
         <loginForm/>
     </div>
 </template>
