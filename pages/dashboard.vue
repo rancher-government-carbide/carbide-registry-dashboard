@@ -3,7 +3,7 @@
       <navbar/>
       <Suspense>
           <template #default>
-              <dashboardProducts/>
+              <DashboardProducts/>
           </template>
           <template #fallback>
               <span>Loading...</span>

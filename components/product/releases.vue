@@ -2,8 +2,9 @@
     <div class="accordion" id="accordion">
       <div class="accordion-item" v-for="release in releasesForProduct" :key="release.Id">
         <h2 class="accordion-header">
-            <button class="accordion-button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+release.Id" aria-expanded="false" :aria-controls="'collapse'+release.Id">
-             {{ release.Name }}
+            <button class="accordion-button d-flex justify-content-between" data-bs-toggle="collapse" :data-bs-target="'#collapse'+release.Id" aria-expanded="false" :aria-controls="'collapse'+release.Id">
+                {{ release.Name }}
+                <IconsDownload :url="release.TarballLink"/>
             </button>
         </h2>
         <div :id="'collapse'+release.Id" class="accordion collapse" data-bs-parent="#accordion">

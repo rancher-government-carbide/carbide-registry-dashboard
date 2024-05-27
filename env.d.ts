@@ -14,6 +14,7 @@ interface User {
 interface Product {
     Id: number;
     Name: string;
+    LogoUrl: string;
     CreatedAt: string;
     UpdatedAt: string;
 }
