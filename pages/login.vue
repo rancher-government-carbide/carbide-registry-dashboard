@@ -1,4 +1,5 @@
 <template>
+    <navbar/>
     <div class="absolute-center">
         <LoginForm/>
     </div>
