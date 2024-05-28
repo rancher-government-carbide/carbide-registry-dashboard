@@ -6,4 +6,3 @@ RUN yarn generate --dotenv .env.prod
 
 FROM cgr.dev/chainguard/nginx:latest
 COPY --from=builder /build/dist /usr/share/nginx/html
-EXPOSE 8080

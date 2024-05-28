@@ -33,6 +33,10 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+          - name: nginx-config
+            mountPath: /etc/nginx/conf.d/nginx.default.conf
+            subPath: nginx.default.conf
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -47,6 +51,10 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: {{ include "carbide-registry-dashboard.fullname" . }}-nginx-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
