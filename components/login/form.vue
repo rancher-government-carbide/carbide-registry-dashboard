@@ -11,12 +11,14 @@
             <div class="center-horizontal">
                 <button class="btn btn-primary" type="button" @click="submitForm">Login</button>
             </div>
+            <div v-if="errorMessage" class="text-danger text-center mt-2">{{ errorMessage }}</div>
         </div> 
     </div>
 </template>
 
 <script setup lang="ts">
 const license = ref('');
+const errorMessage = ref('');
 async function submitForm() {
     try {
         const authorized = await login(license.value)
@@ -25,11 +27,11 @@ async function submitForm() {
             navigateTo('/dashboard')
         } else {
             console.debug("unauthorized")
-            // error popup
+            errorMessage.value = "Invalid license. Please try again.";
         }
     } catch (error) {
         console.error("error:", error);
-        // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "An error occurred.";
+        errorMessage.value = "An error occurred while processing your request. Please try again later.";
     }
 }
 </script>
