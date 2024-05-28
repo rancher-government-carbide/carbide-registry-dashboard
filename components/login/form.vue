@@ -1,7 +1,7 @@
 <template>
-    <div class="card">
+    <div class="card shadow p-2">
         <div class="card-body">
-            <h3 class="card-title text-center fw-bold">Carbide Registry</h3>
+            <h3 class="card-title text-center fw-bold">Sign In</h3>
             <form id="loginForm">
                 <div class="form-floating mb-3 m-4">
                     <input type="password" class="form-control" id="floatingInput" placeholder="license" v-model="license" required>
