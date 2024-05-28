@@ -1,8 +1,9 @@
 <template>
-  <div class="page-container">
+  <div>
+      <navbar/>
       <Suspense>
           <template #default>
-              <div>
+              <div class="container">
                 <ProductTitle/>
                 <ProductReleases/>
               </div>
@@ -13,12 +14,3 @@
       </Suspense>
   </div>
 </template>
-
-<style>
-.page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-</style>

@@ -1,6 +1,6 @@
 export async function login(license: string): Promise<Boolean> {
     try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -34,30 +34,9 @@ export async function userIsAuthorized(): Promise<Boolean> {
     }
 }
 
-export async function register(username: string, password: string) {
+export async function logout(): Promise<Boolean>{
     try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user`, {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ username: username, password: password }),
-        });
-        if (response.ok) {
-            const registerResult = await response.json()
-            return registerResult
-        } else {
-            throw new Error("invalid response from server");
-        }
-    } catch (error) {
-        throw error
-    }
-}
-
-// needs to be implemented on backend
-export async function logout() {
-    try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/logout`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -65,10 +44,9 @@ export async function logout() {
             },
         });
         if (response.ok) {
-            const logoutResult = await response.json()
-            return logoutResult
+            return true
         } else {
-            throw new Error("invalid response from server");
+            return false
         }
     } catch (error) {
         throw error

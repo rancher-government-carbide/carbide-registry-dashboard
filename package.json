@@ -13,10 +13,13 @@
   },
   "devDependencies": {
     "nuxt": "^3.9.3",
+    "sass": "^1.71.1",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
     "typescript": "^5.3.3"
   }
 }

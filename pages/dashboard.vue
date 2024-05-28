@@ -1,8 +1,9 @@
 <template>
-  <div class="page-container">
+  <div>
+      <navbar/>
       <Suspense>
           <template #default>
-              <dashboardProducts/>
+              <DashboardProducts/>
           </template>
           <template #fallback>
               <span>Loading...</span>
@@ -12,10 +13,4 @@
 </template>
 
 <style>
-.page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 </style>

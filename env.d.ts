@@ -14,6 +14,7 @@ interface User {
 interface Product {
     Id: number;
     Name: string;
+    LogoUrl: string;
     CreatedAt: string;
     UpdatedAt: string;
 }
@@ -25,7 +26,7 @@ interface Release {
     TarballLink: string;
     CreatedAt: string;
     UpdatedAt: string;
-    // Images: null;
+    Images: Image[];
 }
 
 interface Image {

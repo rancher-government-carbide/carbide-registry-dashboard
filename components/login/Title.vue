@@ -10,9 +10,4 @@ defineProps<{
 
 
 <style scoped>
-h1 {
-    font-weight: 200;
-    font-size: 3.4rem;
-    position: relative;
-}
 </style>
