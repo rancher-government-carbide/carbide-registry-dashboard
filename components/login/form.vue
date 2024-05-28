@@ -8,7 +8,7 @@
                     <label for="floatingInput">Enter your license</label>
                 </div>
             </form>
-            <div class="center-horizontal">
+            <div class="text-center">
                 <button class="btn btn-primary" type="button" @click="submitForm">Login</button>
             </div>
             <div v-if="errorMessage" class="text-danger text-center mt-2">{{ errorMessage }}</div>
@@ -35,10 +35,3 @@ async function submitForm() {
     }
 }
 </script>
-
-<style>
-.center-horizontal {
-    position: relative;
-    left: 40%;
-}
-</style>
