@@ -2,7 +2,7 @@
     <div class="card shadow p-2">
         <div class="card-body">
             <h3 class="card-title text-center fw-bold">Sign In</h3>
-            <form id="loginForm">
+            <form id="loginForm" @submit.prevent="submitForm">
                 <div class="form-floating mb-3 m-4">
                     <input type="password" class="form-control" id="floatingInput" placeholder="license" v-model="license" required>
                     <label for="floatingInput">Enter your license</label>
