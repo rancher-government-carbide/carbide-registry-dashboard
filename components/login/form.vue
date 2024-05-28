@@ -1,13 +1,17 @@
 <template>
-    <div class="container">
-        <form id="loginForm">
-            <div class="form-floating mb-3">
-                <input class="form-control" placeholder="Paste your license here..." type="password" id="license" name="license" v-model="license" required>
-            </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title text-center fw-bold">Carbide Registry</h3>
+            <form id="loginForm">
+                <div class="form-floating mb-3 m-4">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="license" v-model="license" required>
+                    <label for="floatingInput">Enter your license</label>
+                </div>
+            </form>
             <div class="center-horizontal">
                 <button class="btn btn-primary" type="button" @click="submitForm">Login</button>
             </div>
-        </form>
+        </div> 
     </div>
 </template>
 
