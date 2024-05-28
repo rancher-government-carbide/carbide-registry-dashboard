@@ -41,7 +41,5 @@ try {
     console.log(release.Images)
 } catch (error) {
     console.error("error:", error);
-    // (document.getElementById("error-message") as HTMLParagraphElement).innerText = "error:" + error.message;
 }
-// <td><a :href="image.TarballLink" target="_blank" class="download-button">Download</a></td>
 </script>
