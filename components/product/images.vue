@@ -38,7 +38,6 @@ const images = ref<Image[]>([])
 try {
     let release = await getRelease(props.product, props.release)
     images.value = release.Images
-    console.log(release.Images)
 } catch (error) {
     console.error("error:", error);
 }
