@@ -1,0 +1,6 @@
+cert-manager: https://cert-manager.io/favicons/apple-touch-icon-180x180.png, https://avatars.githubusercontent.com/u/39950598?s=48&v=4
+k3s: https://k3s.io/img/favicon.ico, https://avatars.githubusercontent.com/u/49319725?s=48&v=4
+rke2: https://docs.rke2.io/img/favicon.png,
+longhorn: https://longhorn.io/favicon.png,  https://avatars.githubusercontent.com/u/51335366?s=48&v=4
+rancher: https://www.rancher.com/assets/img/favicon.png, https://avatars.githubusercontent.com/u/9343010?s=48&v=4
+neuvector: https://avatars.githubusercontent.com/u/19367275?s=48&v=4
