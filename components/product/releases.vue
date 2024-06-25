@@ -12,6 +12,7 @@
 
 
 <script setup lang="ts">
+import semverRcompare from 'semver/functions/rcompare'
 const route = useRoute()
 const productName = route.params.slug as string
 const releasesForProduct = ref<Release[]>([])
@@ -23,6 +24,7 @@ onMounted(async () => {
         if (releasesForProduct.value.length > 0) {
             selectedReleaseName.value = releasesForProduct.value[0].Name;
         }
+        releasesForProduct.value.sort((a, b) => semverRcompare(a.Name, b.Name));
     } catch (error) {
         console.error("error:", error);
     }
