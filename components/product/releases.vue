@@ -21,10 +21,10 @@ const selectedReleaseName = ref<string | null>(null);
 onMounted(async () => {
     try {
         releasesForProduct.value = await getAllReleases(productName);
+        releasesForProduct.value.sort((a, b) => semverRcompare(a.Name, b.Name));
         if (releasesForProduct.value.length > 0) {
             selectedReleaseName.value = releasesForProduct.value[0].Name;
         }
-        releasesForProduct.value.sort((a, b) => semverRcompare(a.Name, b.Name));
     } catch (error) {
         console.error("error:", error);
     }
