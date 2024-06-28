@@ -9,6 +9,8 @@ export async function login(license: string): Promise<Boolean> {
             body: JSON.stringify({ license: license }),
         });
         if (response.ok) {
+            const rawLicenseJson = await response.text()
+            localStorage.setItem("license", rawLicenseJson)
             return true
         } else {
             return false
@@ -44,6 +46,7 @@ export async function logout(): Promise<Boolean>{
             },
         });
         if (response.ok) {
+            localStorage.removeItem("license")
             return true
         } else {
             return false
