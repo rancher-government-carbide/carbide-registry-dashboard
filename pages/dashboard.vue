@@ -9,6 +9,7 @@
               <span>Loading...</span>
           </template>
       </Suspense>
+      <rgsfooter/>
   </div>
 </template>
 

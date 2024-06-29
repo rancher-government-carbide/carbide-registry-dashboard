@@ -3,6 +3,7 @@
     <div class="absolute-center">
         <LoginForm/>
     </div>
+    <rgsfooter/>
 </template>
 
 <style scoped>
